@@ -196,10 +196,10 @@ export default function Home() {
                                 <p>{testimonial.post}</p>
 
                                 <div className="grid grid-cols-[auto_1fr] gap-3">
-                                    <div className="ring-foreground/10 bg-muted size-10 rounded-full border border-transparent shadow-md shadow-black/5 ring-1">
+                                    <div className="before:border-foreground/25 relative size-10 rounded-full shadow-md shadow-black/5 before:absolute before:inset-0 before:rounded-full before:border">
                                         <Image
                                             className="aspect-square rounded-full object-cover"
-                                            src={`https://pro.tailark.com/${testimonial.avatar}`}
+                                            src={testimonial.avatar}
                                             alt={testimonial.name}
                                             height="400"
                                             width="400"
