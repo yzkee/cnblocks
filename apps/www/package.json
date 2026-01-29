@@ -62,6 +62,7 @@
     "@tailark/core": "workspace:*",
     "@tailark/dusk": "workspace:*",
     "@tailark/mist": "workspace:*",
+    "@tailark/veil": "workspace:*",
     "@tailark/ts-config": "workspace:*",
     "@tailwindcss/postcss": "^4.1.6",
     "@types/node": "^20",

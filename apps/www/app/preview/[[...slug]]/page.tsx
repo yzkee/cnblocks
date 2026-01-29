@@ -45,7 +45,7 @@ export default function PreviewPage({ params }: { params: Promise<{ slug: string
 
     return (
         <div
-            data-theme={kitShortName === 'mist' && 'mist'}
+            data-theme={kitShortName === 'mist' ? 'mist' : kitShortName == 'veil' && 'veil'}
             className={cn(kitShortName === 'mist' && 'scheme-light bg-background')}>
             <BlockRenderer
                 kitShortName={kitShortName}

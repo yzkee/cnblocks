@@ -1,6 +1,7 @@
 import dynamic from 'next/dynamic'
 import { duskKitBlockMap } from '@tailark/dusk/blocks'
 import { mistKitBlockMap } from '@tailark/mist/blocks'
+import { veilKitBlockMap } from '@tailark/veil/blocks'
 import React from 'react'
 import { Suspense } from 'react'
 
@@ -16,6 +17,7 @@ type BlockLoaderFunctionType = () => Promise<SpecificBlockLoaderComponentType>
 const kitBlockMaps = {
     dusk: duskKitBlockMap,
     mist: mistKitBlockMap,
+    veil: veilKitBlockMap,
 }
 
 const BlockRenderer: React.FC<BlockRendererProps> = ({ kitShortName, category, variant }) => {

@@ -7,7 +7,9 @@
       "@tailark/core/*" : ["../../packages/core/src/*"],
       "@tailark/mist/*" : ["../../packages/mist-kit/*"],
       "@tailark/dusk/*" : ["../../packages/dusk-kit/*"],
-      "@mist/*" : ["../../packages/mist-kit/*"]
+      "@tailark/veil/*" : ["../../packages/veil-kit/*"],
+      "@mist/*" : ["../../packages/mist-kit/*"],
+      "@veil/*" : ["../../packages/veil-kit/*"]
     }
   },
   "include": [
