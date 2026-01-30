@@ -35,4 +35,8 @@ export const veilKitBlockMap = {
         three: () => import('./testimonials/three').then((mod) => mod.default),
         four: () => import('./testimonials/four').then((mod) => mod.default),
     },
+    team: {
+        one: () => import('./team/one').then((mod) => mod.default),
+        two: () => import('./team/two').then((mod) => mod.default),
+    },
 }
