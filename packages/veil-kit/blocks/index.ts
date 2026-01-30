@@ -14,4 +14,8 @@ export const veilKitBlockMap = {
         two: () => import('./features/two').then((mod) => mod.default),
         three: () => import('./features/three').then((mod) => mod.default),
     },
+    integrations: {
+        one: () => import('./integrations/one').then((mod) => mod.default),
+        two: () => import('./integrations/two').then((mod) => mod.default),
+    },
 }

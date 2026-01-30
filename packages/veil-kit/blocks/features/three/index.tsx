@@ -1,7 +1,7 @@
 'use client'
 import { useState } from 'react'
 
-import { Cloud, Cpu, Shield } from 'lucide-react'
+import { Cloud, Cpu, Shield, ChevronRight } from 'lucide-react'
 import { Vercel } from '@veil/components/ui/svgs/vercel'
 import { Supabase } from '@veil/components/ui/svgs/supabase'
 import { Linear } from '@veil/components/ui/svgs/linear'
@@ -25,8 +25,12 @@ export default function Features() {
                         <Button
                             variant="secondary"
                             size="sm"
-                            asChild>
-                            <Link href="#">Get started</Link>
+                            asChild
+                            className="gap-1 pr-1.5">
+                            <Link href="#">
+                                Get started
+                                <ChevronRight />
+                            </Link>
                         </Button>
                     </div>
                     <div className="mt-16 *:w-full *:cursor-pointer">
@@ -38,32 +42,32 @@ export default function Features() {
                                 <div className="size-3 shrink-0 rounded-full border border-current"></div>
                                 <div className="size-3 shrink-0 rounded-full border border-current"></div>
                             </div>
-                            <span className="in-data-[selected=true]:text-shadow-[0.1px_0_0_currentColor]">Seamless Integrations</span>
+                            <span className="in-data-[selected=true]:text-shadow-[0.2px_0_0_currentColor]">Seamless Integrations</span>
                         </button>
                         <button
                             onClick={() => setFeature('real-time-sync')}
                             data-selected={feature === 'real-time-sync'}
                             className="not-data-[selected=true]:hover:text-foreground not-data-[selected=true]:text-muted-foreground flex items-center gap-3 py-2 text-sm">
                             <Cloud className="size-4" />
-                            <span className="in-data-[selected=true]:text-shadow-[0.1px_0_0_currentColor]">Real-time Sync</span>
+                            <span className="in-data-[selected=true]:text-shadow-[0.2px_0_0_currentColor]">Real-time Sync</span>
                         </button>
                         <button
                             onClick={() => setFeature('developer-first')}
                             data-selected={feature === 'developer-first'}
                             className="not-data-[selected=true]:hover:text-foreground not-data-[selected=true]:text-muted-foreground flex items-center gap-3 py-2 text-sm">
                             <Cpu className="size-4" />
-                            <span className="in-data-[selected=true]:text-shadow-[0.1px_0_0_currentColor]">Developer-first</span>
+                            <span className="in-data-[selected=true]:text-shadow-[0.2px_0_0_currentColor]">Developer-first</span>
                         </button>
                         <button
                             onClick={() => setFeature('enterprise-ready')}
                             data-selected={feature === 'enterprise-ready'}
                             className="not-data-[selected=true]:hover:text-foreground not-data-[selected=true]:text-muted-foreground flex items-center gap-3 py-2 text-sm">
                             <Shield className="size-4" />
-                            <span className="in-data-[selected=true]:text-shadow-[0.1px_0_0_currentColor]">Enterprise-ready</span>
+                            <span className="in-data-[selected=true]:text-shadow-[0.2px_0_0_currentColor]">Enterprise-ready</span>
                         </button>
                     </div>
                 </div>
-                <div className="@max-xl:-mx-6 bg-linear-to-b via-muted flex items-center overflow-hidden rounded-3xl *:w-full">
+                <div className="@max-xl:-mx-6 bg-linear-to-b via-muted dark:via-card/50 flex items-center overflow-hidden rounded-3xl *:w-full">
                     {feature === 'seamless-integrations' && <IntegrationsIllustration />}
                     {feature === 'real-time-sync' && <RealTimeIllustration />}
                     {feature === 'developer-first' && <DeveloperIllustration />}
