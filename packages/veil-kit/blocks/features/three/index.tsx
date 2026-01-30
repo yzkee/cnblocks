@@ -10,6 +10,7 @@ import { Firebase } from '@veil/components/ui/svgs/firebase'
 import { ClerkIconDark as Clerk } from '@veil/components/ui/svgs/clerk'
 import { Button } from '@veil/components/ui/button'
 import Link from 'next/link'
+import { cn } from '@tailark/core/lib/utils'
 
 type Feature = 'seamless-integrations' | 'real-time-sync' | 'developer-first' | 'enterprise-ready'
 
@@ -67,7 +68,13 @@ export default function Features() {
                         </button>
                     </div>
                 </div>
-                <div className="@max-xl:-mx-6 bg-linear-to-b via-muted dark:via-card/50 flex items-center overflow-hidden rounded-3xl *:w-full">
+                <div className="@max-xl:-mx-6 not-dark:bg-linear-to-b not-dark:via-muted relative flex items-center overflow-hidden rounded-3xl *:w-full">
+                    <div className={cn('*:bg-linear-to-r not-dark:opacity-50 mask-y-from-65% *:to-muted absolute inset-0 grid grid-cols-4 duration-300', feature === 'seamless-integrations' && '*:bg-linear-to-t grid-cols-1 grid-rows-12', feature === 'developer-first' && '*:bg-linear-to-l grid-cols-2 dark:opacity-50')}>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
                     {feature === 'seamless-integrations' && <IntegrationsIllustration />}
                     {feature === 'real-time-sync' && <RealTimeIllustration />}
                     {feature === 'developer-first' && <DeveloperIllustration />}
@@ -137,7 +144,7 @@ const EnterpriseIllustration = () => {
             aria-hidden
             className="relative flex size-44 items-center justify-center">
             <Shield className="absolute inset-0 size-full stroke-[0.1px] opacity-15" />
-            <Shield className="fill-card drop-shadow-black/3 stroke-border size-32 stroke-[0.2px] drop-shadow-xl" />
+            <Shield className="fill-card dark:fill-foreground/10 drop-shadow-black/3 stroke-border size-32 stroke-[0.2px] drop-shadow-xl" />
         </div>
     )
 }
