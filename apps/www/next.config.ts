@@ -16,6 +16,10 @@ const nextConfig = {
                 protocol: 'https',
                 hostname: 'pro.tailark.com',
             },
+            {
+                protocol: 'https',
+                hostname: 'images.unsplash.com',
+            },
         ],
     },
 }
