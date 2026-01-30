@@ -8,6 +8,7 @@ const cardVariants = cva('text-card-foreground rounded-2xl', {
             default: 'bg-card ring-1 ring-foreground/6.5 shadow-lg shadow-foreground/5 dark:shadow-black/10',
             soft: 'bg-muted',
             mixed: 'bg-muted border',
+            outline: 'bg-card ring-1 ring-border',
         },
     },
     defaultVariants: {

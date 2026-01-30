@@ -9,4 +9,9 @@ export const veilKitBlockMap = {
         one: () => import('./logo-cloud/one').then((mod) => mod.default),
         two: () => import('./logo-cloud/two').then((mod) => mod.default),
     },
+    features: {
+        one: () => import('./features/one').then((mod) => mod.default),
+        two: () => import('./features/two').then((mod) => mod.default),
+        three: () => import('./features/three').then((mod) => mod.default),
+    },
 }

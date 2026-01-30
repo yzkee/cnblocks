@@ -210,7 +210,7 @@
   --popover-foreground: #473424;
   --primary: #98785d;
   --primary-foreground: #0a0a0a;
-  --secondary: #d4c6b9;
+  --secondary: --alpha(var(--primary)/15%);
   --secondary-foreground: #473424;
   --muted: --alpha(var(--foreground)/5%);
   --muted-foreground: #5a5754;
