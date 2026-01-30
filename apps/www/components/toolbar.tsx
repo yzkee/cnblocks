@@ -39,10 +39,12 @@ export const DevToolbar = () => {
     const pathParts = pathname.split('/').filter(Boolean)
 
     let categoryLink: string | null = null
+    let kit: string | null = null
     let category: string | null = null
     let variant: string | null = null
 
     if (pathParts[0] === 'preview' && pathParts.length === 4) {
+        kit = pathParts[1]
         category = pathParts[2]
         variant = pathParts[3]
         categoryLink = `/${category}/#${variant}`
@@ -78,9 +80,20 @@ export const DevToolbar = () => {
     }
 
     const copyInitialHeight = () => {
-        const contentHeight = document.documentElement.scrollHeight
-        navigator.clipboard.writeText(contentHeight.toString())
-        console.log('Initial height copied:', contentHeight)
+        if (!kit || !category || !variant) {
+            console.error('Kit, category or variant not found')
+            return
+        }
+        // Get the actual block content (first section element rendered by the block)
+        const blockContent = document.querySelector('section')
+        if (!blockContent) {
+            console.error('Could not find block content element')
+            return
+        }
+        const contentHeight = blockContent.getBoundingClientRect().height
+        const output = `'${kit}/${category}/${variant}': ${Math.round(contentHeight)},`
+        navigator.clipboard.writeText(output)
+        console.log('Initial height copied:', output)
     }
 
     if (!pathname.includes('/preview')) {
