@@ -69,11 +69,13 @@ export default function Features() {
                     </div>
                 </div>
                 <div className="@max-xl:-mx-6 not-dark:bg-linear-to-b not-dark:via-muted relative flex items-center overflow-hidden rounded-3xl *:w-full">
-                    <div className={cn('*:bg-linear-to-r not-dark:opacity-50 mask-y-from-65% *:to-muted absolute inset-0 grid grid-cols-4 duration-300', feature === 'seamless-integrations' && '*:bg-linear-to-t grid-cols-1 grid-rows-12', feature === 'developer-first' && '*:bg-linear-to-l grid-cols-2 dark:opacity-50')}>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
+                    <div
+                        aria-hidden
+                        className={cn('*:bg-linear-to-r not-dark:opacity-50 mask-y-from-65% *:to-muted absolute inset-0 grid grid-cols-4 duration-300', feature === 'seamless-integrations' && '*:bg-linear-to-t grid-cols-1 grid-rows-12', feature === 'developer-first' && '*:bg-linear-to-l grid-cols-2 dark:opacity-50', feature === 'real-time-sync' && '*:opacity-35')}>
+                        <div />
+                        <div />
+                        <div />
+                        <div />
                     </div>
                     {feature === 'seamless-integrations' && <IntegrationsIllustration />}
                     {feature === 'real-time-sync' && <RealTimeIllustration />}
