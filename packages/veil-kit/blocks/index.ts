@@ -39,4 +39,26 @@ export const veilKitBlockMap = {
         one: () => import('./team/one').then((mod) => mod.default),
         two: () => import('./team/two').then((mod) => mod.default),
     },
+    'call-to-action': {
+        one: () => import('./call-to-action/one').then((mod) => mod.default),
+        two: () => import('./call-to-action/two').then((mod) => mod.default),
+        three: () => import('./call-to-action/three').then((mod) => mod.default),
+        four: () => import('./call-to-action/four').then((mod) => mod.default),
+    },
+    footer: {
+        one: () => import('./footer/one').then((mod) => mod.default),
+        two: () => import('./footer/two').then((mod) => mod.default),
+        three: () => import('./footer/three').then((mod) => mod.default),
+        four: () => import('./footer/four').then((mod) => mod.default),
+    },
+    pricing: {
+        one: () => import('./pricing/one').then((mod) => mod.default),
+        two: () => import('./pricing/two').then((mod) => mod.default),
+        three: () => import('./pricing/three').then((mod) => mod.default),
+    },
+    comparator: {
+        one: () => import('./comparator/one').then((mod) => mod.default),
+        two: () => import('./comparator/two').then((mod) => mod.default),
+        three: () => import('./comparator/three').then((mod) => mod.default),
+    },
 }

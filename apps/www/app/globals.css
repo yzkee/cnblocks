@@ -202,7 +202,7 @@
 
 [data-theme="veil"] {
   --radius: 0.625rem;
-  --background: #f3ede7;
+  --background: #faf7f5;
   --foreground: #473424;
   --card: var(--color-white);
   --card-foreground: #473424;

@@ -9,7 +9,7 @@ const buttonVariants = cva('cursor-pointer active:scale-99 duration-200 font-med
             default: 'bg-foreground text-background hover:brightness-95',
             neutral: 'bg-foreground text-background hover:brightness-95',
             destructive: 'bg-destructive text-destructive-foreground shadow-md hover:bg-destructive/90',
-            outline: 'shadow-sm text-foreground shadow-black/15 border border-transparent bg-background ring-1 ring-foreground/10 duration-200 hover:bg-muted/50',
+            outline: 'shadow-sm text-foreground shadow-black/6.5 border border-transparent bg-card ring-1 ring-foreground/15 duration-200 hover:bg-muted/50',
             secondary: 'bg-secondary text-secondary-foreground hover:bg-secondary/80',
             ghost: 'hover:bg-foreground/5 text-foreground/75 hover:text-foreground',
             link: 'text-primary underline-offset-4 hover:underline',

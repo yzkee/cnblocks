@@ -84,8 +84,8 @@ export const DevToolbar = () => {
             console.error('Kit, category or variant not found')
             return
         }
-        // Get the actual block content (first section element rendered by the block)
-        const blockContent = document.querySelector('section')
+        // Get the actual block content (first section or footer element rendered by the block)
+        const blockContent = document.querySelector('section, footer')
         if (!blockContent) {
             console.error('Could not find block content element')
             return
