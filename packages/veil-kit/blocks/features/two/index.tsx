@@ -127,9 +127,9 @@ export default function Features() {
                             <p className="text-muted-foreground text-sm">Scale confidently with enterprise-grade security and reliability.</p>
                         </div>
 
-                        <div className="relative flex size-44 items-center justify-center">
-                            <Shield className="absolute inset-0 size-full stroke-[0.1px] opacity-15" />
-                            <Shield className="fill-card drop-shadow-black/3 stroke-border size-32 stroke-[0.2px] drop-shadow-xl" />
+                        <div className="pointer-events-none relative -ml-7 flex size-44 items-center justify-center pt-5">
+                            <Shield className="absolute inset-0 top-2.5 size-full stroke-[0.1px] opacity-15" />
+                            <Shield className="size-32 stroke-[0.1px]" />
                         </div>
                     </Card>
                 </div>
