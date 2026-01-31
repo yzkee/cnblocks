@@ -13,7 +13,7 @@ export default function CallToAction() {
                     </div>
 
                     <div className="@max-xl:mx-auto @max-md:flex-col flex w-full max-w-sm gap-2">
-                        <div className="ring-border bg-card focus-within:ring-primary relative flex flex-1 items-center overflow-hidden rounded-lg ring">
+                        <div className="ring-input not-dark:bg-card focus-within:ring-ring/15 focus-within:border-primary relative flex flex-1 items-center overflow-hidden rounded-md border border-transparent ring focus-within:ring-[3px]">
                             <Mail className="text-muted-foreground pointer-events-none absolute left-2.5 size-3.5" />
                             <input
                                 type="email"
