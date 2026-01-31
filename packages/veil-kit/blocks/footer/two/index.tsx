@@ -47,7 +47,7 @@ export default function Footer() {
                             </Link>
                         ))}
                     </div>
-                    <p className="text-muted-foreground mt-8 text-sm">&copy; {new Date().getFullYear()} Veil. All rights reserved.</p>
+                    <p className="text-muted-foreground mt-8 text-sm">&copy; {new Date().getFullYear()} Veil.</p>
                 </div>
             </div>
         </footer>

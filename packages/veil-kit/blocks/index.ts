@@ -50,6 +50,8 @@ export const veilKitBlockMap = {
         two: () => import('./footer/two').then((mod) => mod.default),
         three: () => import('./footer/three').then((mod) => mod.default),
         four: () => import('./footer/four').then((mod) => mod.default),
+        five: () => import('./footer/five').then((mod) => mod.default),
+        six: () => import('./footer/six').then((mod) => mod.default),
     },
     pricing: {
         one: () => import('./pricing/one').then((mod) => mod.default),

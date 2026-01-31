@@ -62,13 +62,6 @@ const blocks = [
     },
     {
         kit: 'veil',
-        category: 'call-to-action',
-        id: 'three',
-        title: 'Call to action section',
-        previewLink: '/preview/veil/call-to-action/three',
-    },
-    {
-        kit: 'veil',
         category: 'pricing',
         id: 'one',
         title: 'Pricing section',
@@ -125,10 +118,17 @@ const blocks = [
     },
     {
         kit: 'veil',
-        category: 'footer',
+        category: 'call-to-action',
         id: 'three',
+        title: 'Call to action section',
+        previewLink: '/preview/veil/call-to-action/three',
+    },
+    {
+        kit: 'veil',
+        category: 'footer',
+        id: 'five',
         title: 'Footer',
-        previewLink: '/preview/veil/footer/three',
+        previewLink: '/preview/veil/footer/five',
     },
 ]
 
