@@ -39,8 +39,10 @@ export default function CategoryLayout({ children, params }: LayoutProps) {
                 allCategories={allCategories}
                 blocks={blocks}
             />
-            <main className="bg-muted/50 dark:bg-background">{children}</main>
-            <SiteFooter />
+            <main className="bg-muted/50 dark:bg-background min-h-screen">{children}</main>
+            <div className="bg-muted/50 dark:bg-background">
+                <SiteFooter />
+            </div>
         </>
     )
 }
