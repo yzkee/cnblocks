@@ -8,7 +8,8 @@
     "veil-button",
     "veil-card",
     "veil-input",
-    "veil-textarea"
+    "veil-textarea",
+    "@shadcn/label"
   ],
   "files": [
     {
