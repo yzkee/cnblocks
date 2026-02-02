@@ -202,43 +202,46 @@
 
 [data-theme="veil"] {
   --radius: 0.625rem;
-  --background: #faf7f5;
-  --foreground: #473424;
+  --background: oklch(0.9779 0.0042 56.38);
+  --foreground: oklch(0.3421 0.0379 61.15);
   --card: var(--color-white);
-  --card-foreground: #473424;
+  --card-foreground: oklch(0.3421 0.0379 61.15);
   --popover: var(--color-white);
-  --popover-foreground: #473424;
-  --primary: #98785d;
-  --primary-foreground: #0a0a0a;
+  --popover-foreground: oklch(0.3421 0.0379 61.15);
+  --primary: oklch(0.5967 0.0558 61.59);
+  --primary-foreground: oklch(0.1448 0 0);
   --secondary: --alpha(var(--primary)/15%);
-  --secondary-foreground: #473424;
+  --secondary-foreground: oklch(0.3421 0.0379 61.15);
   --muted: --alpha(var(--foreground)/5%);
-  --muted-foreground: #5a5754;
-  --accent: #e3e0d8;
-  --accent-foreground: #3f392c;
+  --muted-foreground: oklch(0.4563 0.0061 48.59);
+  --accent: oklch(0.9068 0.0112 89.73);
+  --accent-foreground: oklch(0.3467 0.0231 86.12);
   --destructive: var(--color-red-600);
+  --destructive-foreground: var(--color-white);
   --border: --alpha(var(--foreground)/7.5%);
   --input: --alpha(var(--foreground)/20%);
   --ring: var(--primary);
 
   @variant dark {
-    --radius: 0.625rem;
+    --background: oklch(0.1448 0 0);
+    --foreground: oklch(0.9027 0.0137 60.56);
+
+    --card: oklch(0.1924 0.0016 17.3);
+    --card-foreground: oklch(0.9027 0.0137 60.56);
     
-    --background: #0a0a0a;
-    --foreground: #e6ddd6;
-    --card: #151414;
-    --card-foreground: #e6ddd6;
     --popover: var(--color-white);
-    --popover-foreground: var(--color-zinc-950);
+    --popover-foreground: oklch(0.9027 0.0137 60.56);
+    
     --primary-foreground: var(--color-white);
     --secondary: --alpha(var(--primary)/10%);
-    --secondary-foreground: #e6ddd6;
+    --secondary-foreground: oklch(0.9027 0.0137 60.56);
+    
     --muted: var(--background);
-    --muted-foreground: #a8a6a4;
+    --muted-foreground: oklch(0.7262 0.0037 67.77);
+    
     --accent: var(--color-zinc-700);
     --accent-foreground: var(--color-white);
-    --destructive: var(--color-red-600);
-
+    
     --input: --alpha(var(--foreground)/15%);
   }
 

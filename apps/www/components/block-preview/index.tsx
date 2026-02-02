@@ -132,7 +132,7 @@ const BlockPreview: React.FC<BlockPreviewProps> = ({ code, codes, previewLink, t
                 </div>
 
                 {mode === 'code' && codeAvailable && !previewOnly && (
-                    <div className="bg-card dark:border-foreground/6.5 overflow-hidden rounded-2xl border shadow">
+                    <div className="bg-card dark:border-foreground/6.5 relative z-20 overflow-hidden rounded-2xl border shadow">
                         <CodeEditor
                             files={codeContentForEditor}
                             id={id}
