@@ -43,6 +43,7 @@ function loadCode(filePath: string): string {
         })
 
         code = code.replace('@mist', '@')
+        code = code.replace('@veil', '@')
         
         return code
     }
