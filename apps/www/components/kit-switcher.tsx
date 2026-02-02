@@ -2,23 +2,30 @@
 
 import { useState, useEffect } from 'react'
 import { useRouter, usePathname } from 'next/navigation'
-import { BookOpen, Gem, MoonStar } from 'lucide-react'
+import { Atom, BookOpen, Gem, MoonStar } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { getClientKits } from '@/lib/get-kits'
-import { Select, SelectContent, SelectGroup, SelectItem, SelectLabel, SelectTrigger, SelectValue } from '@tailark/core/ui/select'
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@tailark/core/ui/select'
 
 const kits = getClientKits()
 const STORAGE_KEY = 'selected-kit-id'
+const DEFAULT_CATEGORY_PATH = 'hero-section'
 
-const getKitIdFromPathnameInternal = (path: string, availableKits: Array<{ id: string }>, defaultKitId: string = 'dusk-kit'): string => {
+const getKitRouteSegment = (kitId: string): string => {
+    if (kitId === 'mist-kit') return 'mist'
+    if (kitId === 'veil-kit') return 'veil'
+    return ''
+}
+
+const getKitIdFromPathnameInternal = (path: string, defaultKitId: string = 'dusk-kit'): string => {
     const pathParts = path.split('/')
     const firstSegment = pathParts[1]
 
     if (firstSegment === 'mist') {
         return 'mist-kit'
     }
-    if (availableKits.some((kit) => kit.id === firstSegment && kit.id !== defaultKitId)) {
-        return firstSegment
+    if (firstSegment === 'veil') {
+        return 'veil-kit'
     }
     return defaultKitId
 }
@@ -47,7 +54,7 @@ export function KitSwitcher() {
             return
         }
 
-        const currentKitIdFromPath = getKitIdFromPathnameInternal(pathname, kits, 'dusk-kit')
+        const currentKitIdFromPath = getKitIdFromPathnameInternal(pathname, 'dusk-kit')
         const storedKitId = localStorage.getItem(STORAGE_KEY)
 
         let targetKitId: string
@@ -88,11 +95,11 @@ export function KitSwitcher() {
         setSelectedKitId(newlySelectedKitId)
         localStorage.setItem(STORAGE_KEY, newlySelectedKitId)
 
-        const currentKitIdFromPath = getKitIdFromPathnameInternal(pathname, kits, 'dusk-kit')
+        const currentKitIdFromPath = getKitIdFromPathnameInternal(pathname, 'dusk-kit')
         const pathSegments = pathname.split('/').filter(Boolean)
         let newPath: string
 
-        const newKitRouteSegment = newlySelectedKitId === 'mist-kit' ? 'mist' : newlySelectedKitId
+        const newKitRouteSegment = getKitRouteSegment(newlySelectedKitId)
 
         let remainingPath = ''
         if (currentKitIdFromPath !== 'dusk-kit') {
@@ -105,10 +112,14 @@ export function KitSwitcher() {
             }
         }
 
+        if (!remainingPath) {
+            remainingPath = DEFAULT_CATEGORY_PATH
+        }
+
         if (newlySelectedKitId === 'dusk-kit') {
-            newPath = remainingPath ? `/${remainingPath}` : '/'
+            newPath = `/${remainingPath}`
         } else {
-            newPath = remainingPath ? `/${newKitRouteSegment}/${remainingPath}` : `/${newKitRouteSegment}`
+            newPath = `/${newKitRouteSegment}/${remainingPath}`
         }
 
         if (newPath !== pathname) {
@@ -122,70 +133,69 @@ export function KitSwitcher() {
             defaultValue={selectedKitId}
             onValueChange={handleKitChange}
             disabled={isDisabled}>
-            <SelectTrigger className="hover:bg-muted -ml-2 h-8 gap-3 border-none pl-1.5 pr-3 font-medium shadow-none">
+            <SelectTrigger className="hover:bg-foreground/5 -ml-2 h-8 gap-3 rounded-lg border-none pl-1 pr-3 font-medium shadow-none lg:w-fit">
                 <div className="flex items-center gap-2">
                     <SelectValue placeholder="Select kit" />
                 </div>
             </SelectTrigger>
             <SelectContent
                 sideOffset={6}
-                className="bg-background dark:ring-border w-36 -translate-x-[7px] rounded-lg border-transparent px-0 shadow-xl ring-1 ring-black/10">
-                <SelectGroup>
-                    <SelectLabel className="mx-2 px-0 pb-1">Free kits</SelectLabel>
-                    {kits.map((kit) => (
-                        <SelectItem
-                            key={kit.id}
-                            value={kit.id}
-                            className={cn('hover:bg-muted rounded py-2', selectedKitId === kit.id && 'font-medium')}>
-                            <div className="flex items-center gap-2">
-                                {kit.id === 'dusk-kit' && <DuskKitLogo />}
-                                {kit.id === 'mist-kit' && <MistKitLogo />}
-                                <div className="flex items-center gap-1.5">{kit.name}</div>
-                            </div>
-                        </SelectItem>
-                    ))}
-                </SelectGroup>
-                <SelectGroup>
-                    <SelectLabel className="mx-2 mt-2 border-t border-dashed px-0 pb-1 pt-2">Premium kits</SelectLabel>
+                className="bg-background/85 dark:ring-border w-36 min-w-56 origin-top -translate-x-[7px] rounded-lg border-transparent px-0 shadow-xl ring-1 ring-black/10 backdrop-blur">
+                {kits.map((kit) => (
                     <SelectItem
-                        value="quartz-kit"
-                        className="hover:bg-muted rounded py-2">
+                        key={kit.id}
+                        value={kit.id}
+                        className={cn('rounded p-2.5', selectedKitId === kit.id && 'font-medium')}>
                         <div className="flex items-center gap-2">
-                            <QuartzKitLogo />
-                            <div className="flex items-center gap-1.5">
-                                Quartz
-                                <span className="rounded-full border border-black/5 bg-gradient-to-b from-emerald-50 to-indigo-50 px-1.5 py-1 text-[9px] font-medium leading-none dark:border-0 dark:from-emerald-300/15 dark:to-indigo-500/10">
-                                    <span className="bg-gradient-to-r from-emerald-700 to-indigo-800 bg-clip-text text-transparent dark:from-emerald-200 dark:to-indigo-300">NEW</span>
-                                </span>
-                            </div>
+                            {kit.id === 'dusk-kit' && <DuskKitLogo />}
+                            {kit.id === 'mist-kit' && <MistKitLogo />}
+                            {kit.id === 'veil-kit' && <VeilKitLogo />}
+                            <div className="flex items-center gap-1.5">{kit.name}</div>
                         </div>
                     </SelectItem>
-                </SelectGroup>
+                ))}
+
+                <SelectItem
+                    value="quartz-kit"
+                    className="rounded p-2.5">
+                    <div className="flex items-center gap-2">
+                        <QuartzKitLogo />
+                        <div className="flex items-center gap-1.5">
+                            Quartz
+                            <span className="inset-ring inset-ring-foreground/10 rounded-md bg-gradient-to-b from-emerald-50 to-indigo-50 px-1.5 py-1 text-xs font-medium leading-none dark:from-emerald-300/15 dark:to-indigo-500/10">
+                                <span className="bg-gradient-to-r from-emerald-700 to-indigo-800 bg-clip-text text-transparent dark:from-emerald-200 dark:to-indigo-300">Pro</span>
+                            </span>
+                        </div>
+                    </div>
+                </SelectItem>
             </SelectContent>
         </Select>
     )
 }
 
 const QuartzKitLogo = () => (
-    <div className="bg-linear-to-br relative flex size-5 items-center justify-center rounded from-emerald-400 to-indigo-500 shadow-md shadow-black/25 before:absolute before:inset-px before:rounded-[3px] before:border before:border-white/40 before:ring-1 before:ring-black/25 dark:before:border-transparent dark:before:ring-white/25">
-        <div className="absolute inset-x-px inset-y-1.5 border-y border-dotted border-white/25"></div>
-        <div className="absolute inset-x-1.5 inset-y-px border-x border-dotted border-white/25"></div>
-        <Gem className="size-3 fill-white stroke-white drop-shadow" />
+    <div className="bg-linear-to-br shadow-black/6.5 inset-ring inset-ring-foreground/15 relative flex size-6 items-center justify-center rounded-md from-emerald-400 to-indigo-500 shadow">
+        <Gem className="mask-b-from-25% size-4 fill-white/95 stroke-white drop-shadow" />
     </div>
 )
 
 const DuskKitLogo = () => (
-    <div className="border-background dark:inset-ring dark:inset-ring-white/25 bg-linear-to-b dark:inset-shadow-2xs dark:inset-shadow-white/25 relative flex size-5 items-center justify-center rounded border from-purple-300 to-blue-600 shadow-md shadow-black/20 ring-1 ring-black/10 dark:border-0 dark:shadow-white/10 dark:ring-black/50">
+    <div className="bg-linear-to-b inset-ring inset-ring-foreground/15 shadow-black/6.5 relative flex size-6 items-center justify-center rounded-md from-purple-300 to-blue-600 shadow">
         <div className="absolute inset-x-0 inset-y-1.5 border-y border-dotted border-white/25"></div>
         <div className="absolute inset-x-1.5 inset-y-0 border-x border-dotted border-white/25"></div>
-        <MoonStar className="size-3 fill-white stroke-white drop-shadow" />
+        <MoonStar className="size-4 fill-white/75 stroke-white drop-shadow" />
     </div>
 )
 
 const MistKitLogo = () => (
-    <div className="border-background dark:inset-ring dark:inset-ring-white/25 bg-linear-to-b dark:inset-shadow-2xs dark:inset-shadow-white/25 relative flex size-5 items-center justify-center rounded border from-lime-300 to-teal-600 shadow-md shadow-black/20 ring-1 ring-black/10 dark:border-0 dark:shadow-white/10 dark:ring-black/50">
-        <div className="absolute inset-1 aspect-square rounded-full border border-white/35 bg-black/15"></div>
-        <div className="absolute inset-px aspect-square rounded-full border border-dashed border-white/25"></div>
-        <BookOpen className="size-3 fill-white stroke-white drop-shadow-sm" />
+    <div className="bg-linear-to-b shadow-black/6.5 inset-ring inset-ring-foreground/15 relative flex size-6 items-center justify-center rounded-md from-lime-300 to-teal-600 shadow">
+        <BookOpen className="mask-b-from-25% z-1 relative size-4 fill-white/75 stroke-white drop-shadow-sm" />
+    </div>
+)
+
+const VeilKitLogo = () => (
+    <div className="bg-linear-to-b shadow-black/6.5 inset-ring inset-ring-foreground/15 relative flex size-6 items-center justify-center rounded-md from-[#98785d] to-[#9b978c] shadow">
+        <Atom className="mask-b-from-25% z-1 relative size-4 fill-white stroke-white drop-shadow-sm" />
+        <Atom className="z-2 absolute inset-0 m-auto size-4 fill-white stroke-white opacity-65 drop-shadow-sm" />
     </div>
 )

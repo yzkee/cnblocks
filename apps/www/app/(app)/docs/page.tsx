@@ -2,9 +2,6 @@ import CodeBlock from '@/components/code-block'
 import { SiteFooter } from '@/components/site-footer'
 import Link from 'next/link'
 
-export const revalidate = false
-export const dynamic = 'force-static'
-
 export default function EarlyAccess() {
     return (
         <div className="bg-muted/25 dark:bg-background flex min-h-dvh flex-col pt-8">
