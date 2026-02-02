@@ -14,7 +14,7 @@ const blocks = [
     {
         kit: 'veil',
         category: 'hero-section',
-        id: 'one',
+        id: 'two',
         title: 'Hero section',
         previewLink: '/preview/veil/hero-section/two',
     },

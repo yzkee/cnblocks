@@ -4,6 +4,7 @@ export const veilKitBlockMap = {
         two: () => import('./hero-section/two').then((mod) => mod.default),
         three: () => import('./hero-section/three').then((mod) => mod.default),
         four: () => import('./hero-section/four').then((mod) => mod.default),
+        five: () => import('./hero-section/five').then((mod) => mod.default),
     },
     'logo-cloud': {
         one: () => import('./logo-cloud/one').then((mod) => mod.default),

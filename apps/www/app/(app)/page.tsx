@@ -6,7 +6,7 @@ import Link from 'next/link'
 import { testimonials } from '@/lib/testimonials'
 import { BlockImageCard } from '@/components/block-image-card'
 
-const imageClasses = 'ring-black/10 relative overflow-hidden rounded-xl shadow-md shadow-black/6.5 ring-1 border-4 border-white'
+const imageClasses = 'ring-foreground/7.5 relative overflow-hidden rounded-xl shadow-md shadow-black/4 ring-1 border-4 border-white'
 
 export default function Home() {
     return (
@@ -26,24 +26,24 @@ export default function Home() {
                     </div>
                 </div>
                 <div className="relative">
-                    <h2 className="sr-only">Kits</h2>
+                    <h2 className="sr-only">Free Kits</h2>
                     <div
-                        aria-hidden="true"
-                        className="mask-x-from-75% pointer-events-none absolute -inset-x-32 -inset-y-px border-y border-dashed"
+                        aria-hidden
+                        className="mask-x-from-75% pointer-events-none absolute -inset-x-32 inset-y-0 border-y"
                     />
-                    <div className="relative mx-auto max-w-7xl px-2.5 max-xl:px-1.5">
+                    <div className="relative mx-auto max-w-7xl px-4">
                         <div
-                            aria-hidden="true"
-                            className="mask-y-from-90% pointer-events-none absolute -inset-y-32 inset-x-[5px] border-x border-dashed lg:inset-x-[9px]"
+                            aria-hidden
+                            className="mask-y-from-85% pointer-events-none absolute -inset-y-32 inset-x-4 border-x"
                         />
-                        <div className="bg-foreground/5 dark:bg-foreground/5 ring-foreground/15 relative overflow-hidden rounded-[18px] shadow-md shadow-black/10 ring-1">
+                        <div className="bg-foreground/4 relative">
                             <div className="grid gap-1.5 p-1.5 lg:grid-cols-2">
-                                <div className="bg-card inset-ring-foreground/6.5 inset-ring-1 relative z-10 overflow-hidden rounded-2xl px-6 pt-6 shadow-md shadow-black/5">
+                                <div className="bg-card inset-ring-border inset-ring-1 relative z-10 overflow-hidden rounded-2xl px-6 pt-6 shadow-md shadow-black/5">
                                     <div className="absolute inset-0 -z-10">
                                         <Image
-                                            src="https://images.unsplash.com/photo-1694373281876-4d08f52ad299?q=80&w=2102&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                            src="https://images.unsplash.com/photo-1740516367177-ae20098c8786?q=80&w=2268&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3Dt"
                                             alt="tailark hero section background"
-                                            className="size-full object-cover object-top dark:opacity-10"
+                                            className="size-full object-cover object-top opacity-50 dark:opacity-10"
                                             width={987}
                                             height={1481}
                                             sizes="(max-width: 1280px) 100vw, (min-width: 1280px) 960px"
@@ -54,7 +54,7 @@ export default function Home() {
                                         <div className="mb-4 space-y-0.5">
                                             <h3 className="text-sm font-medium">
                                                 <Link
-                                                    href="https://pro.tailark.com"
+                                                    href="/veil"
                                                     className="before:absolute before:inset-0">
                                                     Tailark Veil
                                                 </Link>
@@ -66,7 +66,7 @@ export default function Home() {
                                                 src="/veil/hero-section.png"
                                                 alt="Tailark Quartz libre pricing page"
                                                 width={936}
-                                                height={1184}
+                                                height={541}
                                                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 60vw, 936px"
                                                 className="object-cover dark:hidden"
                                             />
@@ -74,7 +74,7 @@ export default function Home() {
                                                 src="/veil/hero-section-dark.png"
                                                 alt="Tailark Quartz libre pricing page"
                                                 width={936}
-                                                height={1184}
+                                                height={541}
                                                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 60vw, 936px"
                                                 className="not-dark:hidden object-cover"
                                             />
@@ -82,7 +82,7 @@ export default function Home() {
                                                 src="/veil/features.png"
                                                 alt="Tailark Quartz libre pricing page"
                                                 width={936}
-                                                height={1184}
+                                                height={616}
                                                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 60vw, 936px"
                                                 className="object-cover dark:hidden"
                                             />
@@ -90,7 +90,23 @@ export default function Home() {
                                                 src="/veil/features-dark.png"
                                                 alt="Tailark Quartz libre pricing page"
                                                 width={936}
-                                                height={1184}
+                                                height={616}
+                                                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 60vw, 936px"
+                                                className="not-dark:hidden object-cover"
+                                            />
+                                            <Image
+                                                src="/veil/testimonials.png"
+                                                alt="Tailark Quartz libre pricing page"
+                                                width={936}
+                                                height={178}
+                                                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 60vw, 936px"
+                                                className="object-cover dark:hidden"
+                                            />
+                                            <Image
+                                                src="/veil/testimonials-dark.png"
+                                                alt="Tailark Quartz libre pricing page"
+                                                width={936}
+                                                height={178}
                                                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 60vw, 936px"
                                                 className="not-dark:hidden object-cover"
                                             />
@@ -98,7 +114,7 @@ export default function Home() {
                                                 src="/veil/integrations.png"
                                                 alt="Tailark Quartz libre pricing page"
                                                 width={936}
-                                                height={1184}
+                                                height={533}
                                                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 60vw, 936px"
                                                 className="object-cover dark:hidden"
                                             />
@@ -106,7 +122,7 @@ export default function Home() {
                                                 src="/veil/integrations-dark.png"
                                                 alt="Tailark Quartz libre pricing page"
                                                 width={936}
-                                                height={1184}
+                                                height={533}
                                                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 60vw, 936px"
                                                 className="not-dark:hidden object-cover"
                                             />
@@ -114,9 +130,9 @@ export default function Home() {
                                     </div>
                                 </div>
 
-                                <div className="ring-foreground/6.5 bg-card relative z-10 overflow-hidden rounded-2xl p-6 shadow-md shadow-black/5 ring-1 dark:bg-zinc-800/50">
-                                    <div>
-                                        <div className="mb-4 space-y-0.5">
+                                <div className="space-y-1.5">
+                                    <div className="ring-foreground/6.5 bg-card relative z-10 overflow-hidden rounded-2xl shadow-md shadow-black/5 ring-1">
+                                        <div className="mb-4 space-y-0.5 px-6 pt-6">
                                             <h3 className="text-sm font-medium">
                                                 <Link
                                                     href="/hero-section"
@@ -126,14 +142,14 @@ export default function Home() {
                                             </h3>
                                             <p className="text-muted-foreground text-sm">Perfect for dark mode websites</p>
                                         </div>
-                                        <ImageWrapper>
+                                        <ImageWrapper className="max-xl:aspect-45/52 rounded-none *:aspect-auto *:rounded-none">
                                             <div className={cn('aspect-45/52')}>
                                                 <Image
                                                     src="/dusk/hero-section.png"
                                                     alt="Tailark Dusk features section"
                                                     width={960}
                                                     height={1097.33}
-                                                    sizes="(max-width: 1024px) 400px, 1200px"
+                                                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 60vw, 936px"
                                                     className="size-full object-cover dark:hidden"
                                                 />
                                                 <Image
@@ -141,29 +157,54 @@ export default function Home() {
                                                     alt="Tailark Dusk features section"
                                                     width={960}
                                                     height={1097.33}
-                                                    sizes="(max-width: 1024px) 400px, 1200px"
+                                                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 60vw, 936px"
                                                     className="not-dark:hidden size-full object-cover"
                                                 />
                                             </div>
-                                            <div className={cn('aspect-70/42')}>
-                                                <Image
-                                                    src="/dusk/features.png"
-                                                    alt="Tailark Dusk features section"
-                                                    width={960}
-                                                    height={664.66}
-                                                    sizes="(max-width: 1024px) 400px, 1200px"
-                                                    className="size-full object-cover object-top dark:hidden"
-                                                />
-                                                <Image
-                                                    src="/dusk/features-dark.png"
-                                                    alt="Tailark Dusk features section"
-                                                    width={960}
-                                                    height={664.66}
-                                                    sizes="(max-width: 1024px) 400px, 1200px"
-                                                    className="not-dark:hidden size-full object-cover object-top"
-                                                />
-                                            </div>
                                         </ImageWrapper>
+                                    </div>
+                                    <div className="ring-foreground/6.5 bg-card relative z-10 overflow-hidden rounded-2xl p-6 shadow-md shadow-black/5 ring-1">
+                                        <div className="mb-4 space-y-0.5">
+                                            <h3 className="text-sm font-medium">
+                                                <Link
+                                                    href="/mist"
+                                                    className="before:absolute before:inset-0 before:z-10">
+                                                    Tailark Mist
+                                                </Link>
+                                            </h3>
+                                            <p className="text-muted-foreground text-sm">Notion-inspired marketing blocks</p>
+                                        </div>
+                                        <div className="relative">
+                                            <div className="peer -m-2 overflow-hidden p-2 duration-300 ease-in-out [clip-path:inset(0px_50%_0px_0px)] hover:[clip-path:inset(0px_25%_0px_0px)]">
+                                                <div className={cn(imageClasses, 'aspect-72/38')}>
+                                                    <Image
+                                                        src="/mist/hero.png"
+                                                        alt="Tailark Mist hero section"
+                                                        width={960}
+                                                        height={493.33}
+                                                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 60vw, 936px"
+                                                        className="size-full object-cover object-top"
+                                                    />
+                                                </div>
+                                            </div>
+                                            <div className="peer/dark absolute -inset-x-2 -bottom-2 top-0 p-2 duration-300 ease-in-out [clip-path:inset(0px_0px_0px_50%)] hover:[clip-path:inset(0px_0px_0px_25%)] peer-hover:[clip-path:inset(0px_0px_0px_75%)]">
+                                                <div className={cn(imageClasses, 'aspect-72/38')}>
+                                                    <Image
+                                                        src="/mist/features.png"
+                                                        alt="Tailark Mist features section"
+                                                        width={960}
+                                                        height={482.66}
+                                                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 60vw, 936px"
+                                                        className="size-full object-cover object-top"
+                                                    />
+                                                </div>
+                                            </div>
+                                            <div
+                                                aria-hidden
+                                                className="z-1 pointer-events-none absolute inset-0 flex duration-300 ease-in-out peer-hover/dark:translate-x-[-25.5%] peer-hover:translate-x-[25.5%]">
+                                                <div className="mx-auto h-full w-0.5 rounded bg-white shadow shadow-black/25" />
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -243,7 +284,7 @@ export default function Home() {
                 </div>
             </div>
 
-            <section className="relative mt-20 pb-24">
+            <section className="relative mt-12 overflow-hidden pb-24">
                 <div
                     aria-hidden="true"
                     className="mask-x-from-75% pointer-events-none absolute -inset-x-32 -inset-y-px h-px border-t border-dashed"
@@ -265,15 +306,15 @@ export default function Home() {
                 </div>
                 <div className="relative">
                     <div
-                        aria-hidden="true"
-                        className="mask-x-from-75% pointer-events-none absolute -inset-x-32 -inset-y-px border-y border-dashed"
+                        aria-hidden
+                        className="mask-x-from-75% pointer-events-none absolute -inset-x-32 inset-y-0 border-y"
                     />
-                    <div className="relative mx-auto max-w-7xl px-2.5 max-xl:px-1.5">
+                    <div className="relative mx-auto max-w-7xl px-4">
                         <div
-                            aria-hidden="true"
-                            className="mask-y-from-90% pointer-events-none absolute -inset-y-32 inset-x-[5px] border-x border-dashed lg:inset-x-[9px]"
+                            aria-hidden
+                            className="mask-y-from-85% pointer-events-none absolute -inset-y-32 inset-x-4 border-x"
                         />
-                        <div className="bg-foreground/5 dark:bg-foreground/5 ring-foreground/15 relative overflow-hidden rounded-[18px] shadow-md shadow-black/10 ring-1">
+                        <div className="bg-foreground/4 relative overflow-hidden">
                             <div className="grid grid-cols-2 gap-1.5 p-1.5 sm:grid-cols-3">
                                 <div className="space-y-1.5">
                                     <BlockImageCard
@@ -398,7 +439,7 @@ const ImageWrapper = ({ children, className }: { children: React.ReactNode; clas
                 'bg-card shadow-black/1.5 rounded-xl [--color-border-illustration:--alpha(var(--color-foreground)/6.5%)] [box-shadow:0_0_0_1px_var(--color-border-illustration),0_2px_4px_-0.5px_var(--tw-shadow-color),0_4px_8px_-1px_var(--tw-shadow-color),0_8px_16px_-2px_var(--tw-shadow-color),0_16px_32px_-4px_var(--tw-shadow-color),0_24px_48px_-6px_var(--tw-shadow-color),0_32px_64px_-8px_var(--tw-shadow-color),0_40px_80px_-10px_var(--tw-shadow-color),0_48px_96px_-12px_var(--tw-shadow-color)] dark:shadow-black/5',
                 className
             )}>
-            <div className="max-xl:aspect-20/25 aspect-20/35 overflow-hidden rounded-xl">{children}</div>
+            <div className="aspect-20/39 overflow-hidden rounded-xl">{children}</div>
         </div>
     )
 }

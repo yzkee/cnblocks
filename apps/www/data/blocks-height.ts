@@ -136,6 +136,7 @@ export const blockHeights: Record<string, number> = {
   'veil/hero-section/two': 832,
   'veil/hero-section/three': 752,
   'veil/hero-section/four': 872,
+  'veil/hero-section/five': 816,
   'veil/logo-cloud/one': 184,
   'veil/logo-cloud/two': 128,
   'veil/features/one': 948,
