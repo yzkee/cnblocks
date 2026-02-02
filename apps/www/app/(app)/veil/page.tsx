@@ -7,8 +7,8 @@ import { Button } from '@veil/components/ui/button'
 import { ArrowUpRight } from 'lucide-react'
 
 export const metadata: Metadata = {
-    title: 'Wiki-Style Marketing Blocks | Tailark Veil',
-    description: 'Build elegant, wiki-style marketing websites with pre-built UI blocks based on Shadcn UI',
+    title: 'Veil Kit | Tailark',
+    description: 'Build super minimalist, distraction-free marketing websites.',
 }
 
 const blocks = [

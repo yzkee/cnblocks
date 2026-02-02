@@ -1,9 +1,8 @@
 'use client'
 import React from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
-import { Autoplay, EffectCoverflow } from 'swiper/modules'
+import { EffectCoverflow } from 'swiper/modules'
 import 'swiper/css'
-import 'swiper/css/autoplay'
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
 import 'swiper/css/effect-coverflow'
@@ -124,8 +123,7 @@ export default function HeroSection() {
                                     slidesPerView={1}
                                     pagination={{ clickable: true }}
                                     loop
-                                    autoplay={{ delay: 5000 }}
-                                    modules={[Autoplay, EffectCoverflow]}>
+                                    modules={[EffectCoverflow]}>
                                     <SwiperSlide className="px-2">
                                         <div className="bg-background rounded-(--radius) h-44 max-w-lg border p-9">
                                             <div className="mx-auto h-fit w-full">

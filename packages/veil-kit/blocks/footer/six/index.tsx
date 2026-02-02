@@ -39,7 +39,7 @@ export default function Footer() {
                         <SocialMedias />
                     </div>
 
-                    <p className="text-muted-foreground border-foreground/10 mt-2 border-t border-dashed pt-6 text-sm">&copy; {new Date().getFullYear()} Veil. </p>
+                    <p className="text-muted-foreground border-foreground/10 mt-2 border-t border-dashed pt-6 text-sm">&copy; {2026} Veil. </p>
                 </div>
             </div>
         </footer>

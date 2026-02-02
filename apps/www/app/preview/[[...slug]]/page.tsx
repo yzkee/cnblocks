@@ -5,8 +5,9 @@ import { blocks } from '@/data/blocks'
 
 export async function generateStaticParams() {
     return blocks.flatMap((block) => {
+        const kitShortName = block.kit?.replace('-kit', '') || 'mist'
         return {
-            slug: ['quartz', block.category, block.id],
+            slug: [kitShortName, block.category, block.id],
         }
     })
 }
@@ -54,7 +55,6 @@ async function getParams({ params }: { params: Promise<{ slug: string[] }> }) {
 }
 
 export default async function PreviewPage({ params }: { params: Promise<{ slug: string[] }> }) {
-    'use cache'
     const slug = await getParams({ params })
 
     if (!slug || slug.length < 3) {
@@ -81,6 +81,7 @@ export default async function PreviewPage({ params }: { params: Promise<{ slug: 
 }
 
 async function LazyBlock({ kitShortName, category, variant }: { kitShortName: string; category: string; variant: string }) {
+    'use cache'
     try {
         const BlockModule = await import(`./../../../../../packages/${kitShortName}-kit/blocks/${category}/${variant}`)
         const Block = BlockModule.default

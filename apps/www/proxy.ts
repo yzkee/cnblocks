@@ -1,5 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 
+export function proxy() {}
+
 export const config = {
   matcher: [
     /*

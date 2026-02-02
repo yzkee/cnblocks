@@ -1,7 +1,6 @@
 import { ImageResponse } from 'next/og'
 import { NextRequest } from 'next/server'
-
-export const runtime = 'edge'
+import { connection } from 'next/server'
 
 const size = {
     width: 1200,
@@ -9,6 +8,7 @@ const size = {
 }
 
 export async function GET(request: NextRequest) {
+    await connection()
     try {
         const searchParams = request.nextUrl.searchParams
         const type = searchParams.get('type') || 'default'
