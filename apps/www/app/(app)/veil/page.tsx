@@ -4,6 +4,7 @@ import { Atom } from 'lucide-react'
 import Link from 'next/link'
 import { Metadata } from 'next'
 import { Button } from '@veil/components/ui/button'
+import { ArrowUpRight } from 'lucide-react'
 
 export const metadata: Metadata = {
     title: 'Wiki-Style Marketing Blocks | Tailark Veil',
@@ -147,17 +148,19 @@ export default async function Home() {
                         <p className="text-forground/60 mx-auto mb-6 mt-4 max-w-md text-balance text-lg">Build super minimalist, distraction-free marketing websites.</p>
 
                         <Button asChild>
-                            <Link href="/veil/hero-section">Explore blocks</Link>
+                            <Link href="/veil/hero-section">
+                                Explore blocks <span className="border-l-background/50 ml-0.5 block size-0 border-y-4 border-l-4 border-y-transparent" />
+                            </Link>
                         </Button>
                         <Button
                             variant="outline"
-                            className="ml-3 pr-3.5"
+                            className="ml-3 pr-2.5"
                             asChild>
                             <Link
                                 target="_blank"
-                                href="https://github.com/tailark/blocks/blob/main/packages/mist-kit/README.md">
+                                href="https://github.com/tailark/blocks/blob/main/packages/veil-kit/README.md">
                                 Docs
-                                <span className="border-l-primary-foreground/50 ml-0.5 block size-0 border-y-4 border-l-4 border-y-transparent" />
+                                <ArrowUpRight className="size-3.5! opacity-50" />
                             </Link>
                         </Button>
                     </div>
