@@ -39,11 +39,11 @@ export default function Home() {
                         <div className="bg-foreground/4 relative">
                             <div className="grid gap-1.5 p-1.5 lg:grid-cols-2">
                                 <div className="bg-card inset-ring-border inset-ring-1 relative z-10 overflow-hidden rounded-2xl px-6 pt-6 shadow-md shadow-black/5">
-                                    <div className="absolute inset-0 -z-10">
+                                    <div className="not-dark:mask-t-from-65% absolute inset-0 -z-10">
                                         <Image
                                             src="https://images.unsplash.com/photo-1740516367177-ae20098c8786?q=80&w=2268&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3Dt"
                                             alt="tailark hero section background"
-                                            className="size-full object-cover object-top opacity-50 dark:opacity-10"
+                                            className="size-full object-cover object-top opacity-50 dark:opacity-15"
                                             width={987}
                                             height={1481}
                                             sizes="(max-width: 1280px) 100vw, (min-width: 1280px) 960px"
@@ -51,7 +51,7 @@ export default function Home() {
                                     </div>
 
                                     <div className="-mb-4">
-                                        <div className="mb-4 space-y-0.5">
+                                        <div className="mb-4 space-y-1">
                                             <h3 className="text-sm font-medium">
                                                 <Link
                                                     href="/veil"
@@ -131,8 +131,8 @@ export default function Home() {
                                 </div>
 
                                 <div className="space-y-1.5">
-                                    <div className="ring-foreground/6.5 bg-card relative z-10 overflow-hidden rounded-2xl shadow-md shadow-black/5 ring-1">
-                                        <div className="mb-4 space-y-0.5 px-6 pt-6">
+                                    <div className="ring-foreground/6.5 bg-card relative z-10 overflow-hidden rounded-2xl p-6 shadow-md shadow-black/5 ring-1">
+                                        <div className="mb-4 space-y-1">
                                             <h3 className="text-sm font-medium">
                                                 <Link
                                                     href="/hero-section"
@@ -142,7 +142,7 @@ export default function Home() {
                                             </h3>
                                             <p className="text-muted-foreground text-sm">Perfect for dark mode websites</p>
                                         </div>
-                                        <ImageWrapper className="max-xl:aspect-45/52 rounded-none *:aspect-auto *:rounded-none">
+                                        <ImageWrapper className="max-xl:aspect-45/52 *:aspect-auto">
                                             <div className={cn('aspect-45/52')}>
                                                 <Image
                                                     src="/dusk/hero-section.png"
@@ -164,7 +164,7 @@ export default function Home() {
                                         </ImageWrapper>
                                     </div>
                                     <div className="ring-foreground/6.5 bg-card relative z-10 overflow-hidden rounded-2xl p-6 shadow-md shadow-black/5 ring-1">
-                                        <div className="mb-4 space-y-0.5">
+                                        <div className="mb-4 space-y-1">
                                             <h3 className="text-sm font-medium">
                                                 <Link
                                                     href="/mist"
@@ -320,17 +320,16 @@ export default function Home() {
                                     <BlockImageCard
                                         name="features-carousel-2"
                                         alt="Tailark pro features carousel 2"
-                                        width={1200}
-                                        height={1200}
+                                        height={271}
                                     />
                                     <div className="ring-foreground/6.5 bg-card relative z-10 overflow-hidden rounded-2xl shadow-md shadow-black/5 ring-1">
                                         <div className="aspect-20/22 overlflow-hidden rounded-2xl">
                                             <Image
                                                 src="https://pro.tailark.com/pages/grid-2-landing-one.png"
                                                 alt="Tailark Quartz libre pricing page"
-                                                width={936}
-                                                height={1184}
-                                                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 60vw, 936px"
+                                                width={440}
+                                                height={557}
+                                                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 60vw, 520px"
                                                 className="size-full object-cover object-top"
                                             />
                                         </div>
@@ -338,17 +337,16 @@ export default function Home() {
                                     <BlockImageCard
                                         name="features-11"
                                         alt="Tailark pro features 11"
-                                        width={1200}
-                                        height={1200}
+                                        height={245}
                                     />
                                     <div className="ring-foreground/6.5 bg-card relative z-10 overflow-hidden rounded-2xl shadow-md shadow-black/5 ring-1">
                                         <div className="aspect-20/22 overlflow-hidden rounded-2xl">
                                             <Image
                                                 src="https://pro.tailark.com/pages/libre-pricing-one.png"
                                                 alt="Tailark Quartz libre pricing page"
-                                                width={936}
-                                                height={1184}
-                                                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 60vw, 936px"
+                                                width={440}
+                                                height={557}
+                                                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 60vw, 520px"
                                                 className="size-full object-cover object-top"
                                             />
                                         </div>
@@ -359,17 +357,16 @@ export default function Home() {
                                     <BlockImageCard
                                         name="hero-section-15"
                                         alt="Tailark pro hero section 15"
-                                        width={1200}
-                                        height={1200}
+                                        height={397}
                                     />
                                     <div className="ring-foreground/6.5 bg-card relative z-10 overflow-hidden rounded-2xl shadow-md shadow-black/5 ring-1">
                                         <div className="aspect-20/22 overlflow-hidden rounded-2xl">
                                             <Image
                                                 src="https://pro.tailark.com/pages/dark-landing-one.png"
                                                 alt="Tailark Quartz libre pricing page"
-                                                width={936}
-                                                height={1184}
-                                                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 60vw, 936px"
+                                                width={440}
+                                                height={557}
+                                                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 60vw, 520px"
                                                 className="size-full object-cover object-top"
                                             />
                                         </div>
@@ -377,14 +374,12 @@ export default function Home() {
                                     <BlockImageCard
                                         name="call-to-action-1"
                                         alt="Tailark pro call to action 1"
-                                        width={1200}
-                                        height={1200}
+                                        height={158}
                                     />
                                     <BlockImageCard
                                         name="hero-section-16"
                                         alt="Tailark pro hero section 16"
-                                        width={1200}
-                                        height={1200}
+                                        height={445}
                                     />
                                 </div>
                                 <div className="grid grid-rows-[auto_1fr] gap-1.5 max-sm:hidden">
@@ -392,27 +387,23 @@ export default function Home() {
                                         <BlockImageCard
                                             name="team-3"
                                             alt="Tailark pro team 3"
-                                            width={1200}
-                                            height={1200}
+                                            height={257}
                                         />
                                         <BlockImageCard
                                             name="bento-13"
                                             alt="Tailark pro bento 13"
-                                            width={1200}
-                                            height={1200}
+                                            height={428}
                                         />
                                         <BlockImageCard
                                             name="investors-2"
                                             alt="Tailark pro investors 2"
-                                            width={1200}
-                                            height={1200}
+                                            height={271}
                                         />
 
                                         <BlockImageCard
                                             name="secondary-hero-2"
                                             alt="Tailark pro secondary hero 2"
-                                            width={1200}
-                                            height={1200}
+                                            height={388}
                                         />
                                     </div>
                                     <div className="bg-card ring-foreground/6.5 flex items-center justify-center rounded-2xl p-8 shadow-md shadow-black/5 ring-1">

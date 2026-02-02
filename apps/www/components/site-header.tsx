@@ -28,11 +28,11 @@ export const SiteHeader = () => {
                         <Link
                             href="/"
                             className="flex w-fit items-center gap-2">
-                            <Logo />
+                            <Logo className="h-5" />
                             <span className="sr-only">Tailark</span>
                         </Link>
 
-                        <BlackFridayDealBanner />
+                        <VeilBanner />
                     </div>
 
                     <div className="-mr-2 hidden items-center gap-4 sm:flex">
@@ -312,16 +312,16 @@ export const SiteHeader = () => {
     )
 }
 
-export const BlackFridayDealBanner = () => (
-    <div className="dark:text-foreground hover:bg-foreground/5 dark:hover:bg-emerald-500/7 dark:bg-emerald-500/3 dark:bg-linear-to-l dark:from-foreground/5 relative inline-flex h-7 items-center gap-1 rounded-full bg-emerald-500/10 text-sm text-emerald-950 before:pointer-events-none before:absolute before:inset-0 before:rounded-full before:border before:border-emerald-500/25">
+export const VeilBanner = () => (
+    <div className="dark:text-foreground hover:bg-foreground/5 dark:hover:bg-zinc-500/7 dark:bg-zinc-500/3 dark:bg-linear-to-l dark:from-foreground/5 relative inline-flex h-7 items-center gap-1 rounded-full bg-zinc-500/10 text-sm text-zinc-950 before:pointer-events-none before:absolute before:inset-0 before:rounded-full before:border before:border-zinc-500/25">
         <Link
             href="/veil"
             aria-label="Introducing Veil Kit"
             className="flex items-center gap-1 px-2.5 py-1">
-            <span className="dark:text-foreground hidden text-emerald-950 opacity-65 sm:inline">New: </span>
+            <span className="dark:text-foreground hidden text-zinc-950 opacity-65 sm:inline">New: </span>
             <span className="dark:text-foreground/85 font-medium">Introducing Veil Kit</span>
-            <span className="dark:border-l-foreground/50 ml-2 block size-0 border-y-4 border-l-4 border-y-transparent border-l-emerald-950/50" />
+            <span className="dark:border-l-foreground/50 ml-2 block size-0 border-y-4 border-l-4 border-y-transparent border-l-zinc-950/50" />
         </Link>
-        <BorderBeam className="from-emerald-200 via-emerald-500 to-transparent" />
+        <BorderBeam className="from-zinc-200 via-zinc-500 to-transparent" />
     </div>
 )
